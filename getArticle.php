@@ -7,7 +7,8 @@
  */
 set_time_limit(120);    //设定为两分钟超时
 header("Content-Type:text/html;charset=utf-8");
-$type_arr = array(
+//平台数组
+$platform_arr = array(
     "mafengwo" =>  array(
                         "info"=>array(
                                     "title" =>  array("rule"=>"<h3>(.*?)<\/h3>","key"=>1),
@@ -32,7 +33,7 @@ $type_arr = array(
 );
 
 $param = array();
-$t = $_INPUT['type'];
+$t = $_GET['type'];
 IF( !ISSET($type_arr[$t]) ){
     die("频道有错！");
 }
